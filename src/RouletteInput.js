@@ -12,7 +12,7 @@ export class RouletteInput extends Component {
 	render = () => {
 		return (
 			<div className="roulette-inp" >
-				<input value={this.props.value} onChange={(e)=>this.state.onChange(e.currentTarget.value)} className="input"/>
+				<input type="number" value={this.props.value} onChange={(e)=>this.state.onChange(e.currentTarget.value)} className="input"/>
 			</div>
 		)
 	}
