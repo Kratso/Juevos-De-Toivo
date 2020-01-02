@@ -32,8 +32,7 @@ const randomizer = (money)=>{
           case 7 :
             value = 2;
         }
-	  value = Math.trunc(value * money);
-	  return value;
+	  return [value,  Math.trunc(value * money)];
 }
 
 class App extends React.Component {
@@ -42,6 +41,7 @@ constructor(props) {
   this.state = {
     value: 0,
     money: 0,
+    mult: 0,
     onChange : (number) => {
       if(!isNaN(Number(number))){
         let money = number
@@ -49,7 +49,7 @@ constructor(props) {
       }
     },
     onClick : ()=>{
-	Array.apply(null,Array(5)).map((x)=>randomizer(this.state.money)).forEach(e=>this.setState({value: e}));
+	Array.apply(null,Array(5)).map((x)=>randomizer(this.state.money)).forEach(e=>this.setState({value: e[1], mult: e[0], money: e[1]}));
     }
   } 
 }
@@ -66,7 +66,8 @@ render = () => {
         </h1>
       </header>
       <div className="game-area">
-        <NumberHolder value={this.state.value}/>
+        <NumberHolder value={this.state.value} className="number-holder"  />
+        <NumberHolder value={this.state.mult} className="number-holder2" />/
         <label className="roulette-label">Apuesta</label>
         <RouletteInput value={this.state.money} onChange={this.state.onChange} />
         <RouletteButton onClick={this.state.onClick} />

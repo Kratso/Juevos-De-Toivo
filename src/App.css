@@ -34,16 +34,16 @@ body {
 .game-area {
   display: grid;
   grid-template-areas: 
-	  ".		.		.		.		.		.		." 	
-	  ".		.		number	number	number	.		."	
-	  ".		.		number	number	number	.		."	
-	  ".		.		number	number	number	.		."	
-	  ".		.		number	number	number	.		."	
-	  ".		.		number	number	number	.		."	
-	  ".		.		.		.		.		.		." 
-	  ".		label	label	.		.		.		."	
-	  ".		inp		inp		inp		.		button	."	
-	  ".		.		.		.		.		.		." 											
+	  ".		.		.		.		.		.		.		." 	
+	  ".		.		number	number	number2	number2	.		."	
+	  ".		.		number	number	number2	number2	.		."	
+	  ".		.		number	number	number2	number2	.		."	
+	  ".		.		number	number	number2	number2	.		."	
+	  ".		.		number	number	number2	number2	.		."	
+	  ".		.		.		.		.		.		.		." 
+	  ".		label	label	.		.		.		.		."	
+	  ".		inp		inp		inp		.		button	.		."	
+	  ".		.		.		.		.		.		.		." 											
 	  ;
 
 
@@ -51,6 +51,12 @@ body {
 
 .number-holder {
 	grid-area: number;
+	text-align: center;
+	font-size: 60px;
+}
+
+.number-holder2 {
+	grid-area: number2;
 	text-align: center;
 	font-size: 60px;
 }
